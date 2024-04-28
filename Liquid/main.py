@@ -298,6 +298,15 @@ class LiquidNet(nn.Module):
             denominator = self.cm_t + self.gleak + w_denominator
 
             v_pre = torch.div(numerator, denominator)
+            
+        del sensory_w_activation
+        del sensory_rev_activation
+        del w_numerator_sensory
+        del w_denominator
+        del w_numerator
+        del w_activation
+        del rev_activation
+        del w_denominator_sensory
 
         return v_pre
 
